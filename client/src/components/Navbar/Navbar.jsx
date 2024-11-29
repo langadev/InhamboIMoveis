@@ -13,12 +13,12 @@ function Navbar() {
   return (
     <div className="shadow-md w-full fixed top-0 left-0 z-40">
       <nav className="bg-white flex justify-between items-center md:px-20 md:py-5 px-3 py-4 relative">
-        {/* Logo */}
+     
         <h2 className="font-bold text-2xl cursor-pointer flex items-center gap-1">
           Langa<span className="text-blue-500">Imoveis</span>
         </h2>
 
-        {/* Nome do Usuário */}
+       
         {user?.nome && (
           <div className="hidden md:flex items-center gap-2">
             <UserCircleIcon className="w-7 h-7 text-gray-500" />
@@ -26,7 +26,7 @@ function Navbar() {
           </div>
         )}
 
-        {/* Toggle Button */}
+     
         <div
           onClick={() => setOpen(!open)}
           className="absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7"
@@ -38,10 +38,10 @@ function Navbar() {
           )}
         </div>
 
-        {/* Menu Items */}
+        
         <ul
-          className={`md:flex md:gap-x-5 md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
-            open ? "top-12" : "top-[-490px]"
+          className={`md:flex md:gap-x-2 md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-1/2 md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+            open ? "top-12" : "top-[-490px] rounded-md "
           }`}
         >
           {NavbarMenu.map((item) => (

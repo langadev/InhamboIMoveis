@@ -2,70 +2,72 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 function Filters() {
   return (
-    <div className="flex items-center mt-24 px-1">
-      <div className="bg-[#2e3133] w-full md:mx-20 mx-2 py-4 rounded-lg">
-        <form className="md:flex w-full px-2  justify-around items-end" action="">
+    <div className="flex justify-center items-center w-full">
+      <div className="shadow-lg w-full md:mx-6 mx-2 py-6 bg-white rounded-xl">
+        <form className="flex flex-wrap md:flex-nowrap w-full px-6 gap-6 justify-between items-end">
           {/* Localização */}
-        
-          <div className="flex flex-col  text-white font-thin">
-            <label htmlFor="location">Localização</label>
+          <div className="flex flex-col w-full md:w-auto font-medium">
+            <label htmlFor="location" className="mb-1 text-gray-700">Localização</label>
             <input
               id="location"
-              className="bg-white rounded-sm border-none outline-none text-[#2e3133] px-2 py-1"
+              className="bg-gray-50 w-full rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-700 px-3 py-2 shadow-sm"
               type="text"
               placeholder="Pesquise a Cidade"
             />
           </div>
-          {/* Preço Mínimo */}
-          <div className="md:flex grid grid-cols-2 gap-2">
-          <div className="flex flex-col text-white font-thin">
-            <label htmlFor="min-price">Preço Min.</label>
-            <input
-              id="min-price"
-              className="bg-white rounded-sm border-none outline-none text-[#2e3133] px-2 py-1"
-              type="number"
-              placeholder="0 $"
-            />
+
+          {/* Preços e Quartos */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+            <div className="flex flex-col font-medium">
+              <label htmlFor="min-price" className="mb-1 text-gray-700">Preço Min.</label>
+              <input
+                id="min-price"
+                className="bg-gray-50 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-700 px-3 py-2 shadow-sm"
+                type="number"
+                placeholder="0 $"
+              />
+            </div>
+
+            <div className="flex flex-col font-medium">
+              <label htmlFor="max-price" className="mb-1 text-gray-700">Preço Max</label>
+              <input
+                id="max-price"
+                className="bg-gray-50 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-700 px-3 py-2 shadow-sm"
+                type="number"
+                placeholder="0 $"
+              />
+            </div>
+
+            <div className="flex flex-col font-medium">
+              <label htmlFor="rooms" className="mb-1 text-gray-700">Quartos</label>
+              <input
+                id="rooms"
+                className="bg-gray-50 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-700 px-3 py-2 shadow-sm"
+                type="number"
+                placeholder="Ex: 2"
+              />
+            </div>
+
+            <div className="flex flex-col font-medium">
+              <label htmlFor="bathrooms" className="mb-1 text-gray-700">Banheiros</label>
+              <input
+                id="bathrooms"
+                className="bg-gray-50 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-gray-700 px-3 py-2 shadow-sm"
+                type="number"
+                placeholder="Ex: 1"
+              />
+            </div>
           </div>
-          {/* Preço Máximo */}
-          <div className="flex flex-col text-white font-thin">
-            <label htmlFor="max-price">Preço Max</label>
-            <input
-              id="max-price"
-              className="bg-white rounded-sm border-none outline-none text-[#2e3133] px-2 py-1"
-              type="number"
-              placeholder="0 $"
-            />
-          </div>
-          {/* Quartos */}
-          <div className="flex flex-col text-white font-thin">
-            <label htmlFor="rooms">Quartos</label>
-            <input
-              id="rooms"
-              className="bg-white rounded-sm border-none outline-none text-[#2e3133] px-2 py-1"
-              type="number"
-              placeholder="Ex: 2"
-            />
-          </div>
-          {/* Banheiros */}
-          <div className="flex flex-col text-white font-thin">
-            <label htmlFor="bathrooms">Banheiros</label>
-            <input
-              id="bathrooms"
-              className="bg-white rounded-sm border-none outline-none text-[#2e3133] px-2 py-1"
-              type="number"
-              placeholder="Ex: 1"
-            />
-          </div>
-          </div>
-          {/* Botão de Busca */}
-          <div className="flex mt-2 items-center ">
+
+          {/* Botão */}
+          <div className="flex items-center w-full md:w-auto">
             <button
               type="submit"
-              className="text-white flex justify-center bg-blue-500 rounded-md px-4 py-2 hover:bg-[#393b3d] border-blue-500 border-2 w-full"
+              className="text-white flex justify-center items-center bg-blue-500 rounded-md px-5 py-3 hover:bg-blue-600 transition-all shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full md:w-auto"
               aria-label="Buscar"
             >
-              <MagnifyingGlassIcon className="h-5 w-5 texc" />
+              <MagnifyingGlassIcon className="h-5 w-5" />
+              <span className="hidden md:block ml-2">Buscar</span>
             </button>
           </div>
         </form>

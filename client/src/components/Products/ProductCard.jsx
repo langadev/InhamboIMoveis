@@ -1,8 +1,52 @@
-function ProductCard({ url, alt, price }) {
+import { HeartIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import { FaBed, FaShower } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+function ProductCard({ url, alt, price, description, quartos, banheiros }) {
   return (
-    <div className="">
-      <img src={url} alt={alt} />
-      <p>{price}</p>
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-sm">
+      {/* Imagem */}
+      <div className="relative">
+        <img className="h-60 w-full object-cover" src={url} alt={alt} />
+        <button className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md">
+          <HeartIcon className="h-6 w-6 text-red-500" />
+        </button>
+      </div>
+
+      {/* Detalhes */}
+      <div className="p-4">
+        {/* Preço e localização */}
+        <div className="flex justify-between items-center mb-3">
+          <span className="text-lg font-bold text-gray-800">
+            ${price.toLocaleString()}
+          </span>
+          <button className="bg-blue-500 p-1 text-white text-center rounded-md border-blue-500 border-2  hover:bg-blue-600 ">
+            <Link to={'/desc'}> Detalhes</Link>
+          </button>
+        </div>
+
+        {/* Descrição */}
+        <p className="text-sm text-gray-600 mb-3">{description}</p>
+
+        {/* Informações de quartos e banheiros */}
+        <div className="flex items-center space-x-4 text-sm text-gray-500">
+          {/* Quartos */}
+          <div className="flex items-center space-x-2">
+           <FaBed/>
+            <span>
+              <strong>{quartos}</strong> {quartos === 1 ? "Quarto" : "Quartos"}
+            </span>
+          </div>
+          {/* Banheiros */}
+          <div className="flex items-center space-x-2">
+            <FaShower/>
+            <span>
+              <strong>{banheiros}</strong>{" "}
+              {banheiros === 1 ? "Banheiro" : "Banheiros"}
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
