@@ -5,6 +5,7 @@ import Register from "../pages/Register/Register";
 import House from "../components/House/House";
 import UserDashboard from "../components/Reserva/ReservationCard";
 import AdminDashboard from "../components/admin/AdminDashboad";
+import Dashboard from "../components/admin/Dashboard";
 
 
 const RouteComponent = () => {
@@ -12,11 +13,11 @@ const RouteComponent = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/entrar" element={<Register />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/desc" element={<House/>}/>
         <Route path="/reserv" element={<UserDashboard/>}/>
-        <Route path="/admin" element={<AdminDashboard/>}/>
+        <Route path="/admin" element={<Dashboard/>}/>
       </Routes>
     </BrowserRouter>
   );

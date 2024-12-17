@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Filters from "./components/Filters/Filters";
 import Products from "./components/Products/Products";
 import Banner from "./components/Banner/Banner";
+import Footer from "./components/Footer/Footer";
 
 export default function App() {
   return (
@@ -9,7 +10,8 @@ export default function App() {
       <Navbar />
       <Banner/>
       <Filters />
-        <Products />
+      <Products />
+      <Footer/>
       </div>
     
   );

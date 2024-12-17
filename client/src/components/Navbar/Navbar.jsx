@@ -49,10 +49,10 @@ function Navbar() {
         {/* Usuário Logado */}
         <div className="flex items-center gap-3 md:static absolute top-4 right-16 md:right-0">
           {user ? (
-            <div className="flex items-center gap-2">
+            <Link to={'/login'} className="flex items-center gap-2">
               <UserCircleIcon className="w-8 h-8 text-blue-500" />
               <span className="font-semibold text-gray-800 hidden md:block">{user.name}</span>
-            </div>
+            </Link>
           ) : (
             <Link
               to="/login"
